@@ -22,13 +22,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="stylesheet" href="css/style.css">
 
-<!-- LocalBusiness Schema -->
+<!-- 1. Main LocalBusiness / HomeAndConstructionBusiness Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
   "name": "RepairNow Mumbai",
+  "url": "https://www.repairnowmumbai.in/",
+  "logo": "https://www.repairnowmumbai.in/images/repairnowmumbai-logo.png",
   "image": "https://www.repairnowmumbai.in/images/repairnowmumbai-logo.png",
+  "description": "Expert washing machine and home appliance repair services in Mumbai with same-day service, genuine parts, and warranty.",
   "telephone": "+91-88507-05511",
   "email": "repairnowmumbai@gmail.com",
   "address": {
@@ -39,10 +42,108 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "postalCode": "400050",
     "addressCountry": "IN"
   },
-  "areaServed": "Mumbai",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.0657", 
+    "longitude": "72.8385"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
   "priceRange": "₹₹",
-  "openingHours": "Mo-Su 08:00-22:00",
-  "url": "https://www.repairnowmumbai.in/"
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Mumbai"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Navi Mumbai"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Thane"
+    }
+  ],
+  "paymentAccepted": ["Cash", "Credit Card", "UPI", "Net Banking"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Washing Machine Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Front Load Washing Machine Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Top Load Washing Machine Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fully Automatic Washing Machine Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Washing Machine Motherboard Repair"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- 2. Website & Site Structure Schema (Mapping major service landing pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.repairnowmumbai.in/",
+  "name": "RepairNow Mumbai",
+  "description": "Professional washing machine repair services in Mumbai.",
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "url": "https://www.repairnowmumbai.in/lg-washing-machine-repair",
+      "name": "LG Washing Machine Repair"
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.repairnowmumbai.in/samsung-washing-machine-repair",
+      "name": "Samsung Washing Machine Repair"
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.repairnowmumbai.in/ifb-washing-machine-repair",
+      "name": "IFB Washing Machine Repair"
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.repairnowmumbai.in/bosch-washing-machine-repair",
+      "name": "Bosch Washing Machine Repair"
+    }
+  ]
 }
 </script>
 </head>
