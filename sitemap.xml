@@ -3,92 +3,77 @@
 
     <url>
         <loc>https://www.repairnowmumbai.in/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+         <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/refrigerator-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>   
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/dishwasher-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
-
+    
     <url>
         <loc>https://www.repairnowmumbai.in/microwave-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/siemens-washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/lg-washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/samsung-washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/ifb-washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/bosch-washing-machine-repair.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/services.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/areas.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/booking.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/about.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
     <url>
         <loc>https://www.repairnowmumbai.in/contact.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <lastmod>2026-10-02</lastmod>
     </url>
 
 </urlset>
