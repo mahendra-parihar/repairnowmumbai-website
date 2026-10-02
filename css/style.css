@@ -29,7 +29,7 @@ body{
   color:var(--text-dark);
   background:var(--white);
   line-height:1.6;
-  padding-bottom:64px; /* space for sticky mobile bar */
+
 }
 
 img{max-width:100%;display:block;}
@@ -73,7 +73,7 @@ header.main-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 0;
+  padding:14px 10px;
   gap:12px;
 }
 .logo{
@@ -135,14 +135,16 @@ nav.main-nav a:hover, nav.main-nav a.active{
 }
 .nav-dropdown:hover .nav-dropdown-menu{display:block;}
 .nav-dropdown-menu a{
-  display:block;
+  display:inline-block;
   padding:9px 12px;
-  border-radius:6px;
+  /* border-radius:6px; */
   font-weight:500;
   font-size:14px;
   border:none;
 }
-.nav-dropdown-menu a:hover{background:var(--grey-bg);color:var(--orange);}
+.nav-dropdown-menu a:hover{
+  /* background:var(--grey-bg); */
+  color:var(--orange);}
 
 .header-cta{
   display:flex;
@@ -195,7 +197,19 @@ nav.main-nav a:hover, nav.main-nav a.active{
   background:none;
   padding:6px;
 }
-.hamburger span{width:26px;height:3px;background:var(--navy);border-radius:2px;}
+.hamburger span{width:26px;height:3px;background:var(--navy);border-radius:2px;transition: 0.3s ease;}
+/* Active = Close icon */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
 /* ---------- Sticky Mobile Call Bar ---------- */
 .mobile-sticky-bar{
@@ -227,14 +241,13 @@ nav.main-nav a:hover, nav.main-nav a.active{
 /* ---------- WhatsApp Floating Button ---------- */
 .wa-float{
   position:fixed;
-  bottom:76px;right:18px;
+  bottom:76px;
+  right:18px;
   z-index:1100;
   /* background:var(--green);
   color:#fff;
   width:58px;height:58px;
   border-radius:50%; */
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;
   /* box-shadow:0 6px 18px rgba(37,211,102,0.5); */
   /* animation:pulse 2.2s infinite; */
 }
@@ -383,6 +396,12 @@ nav.main-nav a:hover, nav.main-nav a.active{
   margin-top:10px;
   text-align:center;
 }
+.forward-arrow{
+  width: 16px;
+  height: 16px;
+  transition: transform .25s ease;
+}
+.quote-card .btn-call:hover .forward-arrow{transform:translateX(4px);}
 
 /* ---------- Section Basics ---------- */
 section{padding:56px 0;}
@@ -395,7 +414,7 @@ section{padding:56px 0;}
   display:inline-block;
   color:var(--orange);
   font-weight:800;
-  font-size:13px;
+  font-size:16px;
   letter-spacing:1.2px;
   text-transform:uppercase;
   margin-bottom:8px;
@@ -796,6 +815,10 @@ footer{
 }
 
 @media(max-width:768px){
+  .logo .logo-img, .footer-logo .logo-img {
+    max-width: 80px;
+    max-height: max-content;
+  }
   nav.main-nav{
     position:fixed;
     top:0;left:-100%;
@@ -811,7 +834,7 @@ footer{
     overflow-y:auto;
   }
   nav.main-nav.open{left:0;}
-  nav.main-nav a{width:100%;padding:12px 0;border-bottom:1px solid var(--grey-line);}
+  nav.main-nav a{padding:8px 0;border-bottom:1px solid var(--grey-line);}
   .nav-dropdown-menu{
     display:none;
     position:static;
@@ -821,8 +844,8 @@ footer{
   .nav-dropdown.open .nav-dropdown-menu{display:block;}
   .hamburger{display:flex;}
   .header-cta .btn-outline{display:none;}
-  .mobile-sticky-bar{display:block;}
-  body{padding-bottom:58px;}
+  /* .mobile-sticky-bar{display:block;} mobile bottom sticky bar */
+  body{padding-bottom:50px;}
   .hero{padding:34px 0 40px;}
   .hero h1{font-size:28px;}
   .hero-trust{gap:16px;}
@@ -846,4 +869,215 @@ footer{
   .footer-grid{grid-template-columns:1fr;}
   .logo{font-size:18px;}
   .logo .logo-badge{width:36px;height:36px;font-size:17px;}
+}
+
+/* ---------- Service Photo Cards (services page) ---------- */
+:root{--svc-blue:#14a3e8;--svc-muted:#64748b;}
+.svc-photo-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+}
+.svc-photo-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border:1px solid var(--grey-line);
+  border-radius:28px;
+  overflow:hidden;
+  font-family:'Manrope','Segoe UI',Roboto,Arial,sans-serif;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.svc-photo-card:hover{
+  transform:translateY(-4px);
+  border-color:#bfe3f7;
+  box-shadow:0 14px 34px rgba(11,37,69,0.10);
+}
+.svc-photo-card:focus-within{outline:3px solid var(--svc-blue);outline-offset:2px;}
+.svc-photo-card .svc-img{
+  aspect-ratio:317/240;
+  overflow:hidden;
+  background:var(--grey-bg);
+}
+.svc-photo-card .svc-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.svc-photo-card:hover .svc-img img{transform:scale(1.05);}
+.svc-photo-card .svc-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:30px 32px 32px;
+  text-align:center;
+}
+.svc-photo-card h3{
+  font-size:16px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:var(--navy);
+}
+.svc-photo-card p{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--svc-muted);
+}
+.svc-photo-card .svc-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:auto;
+  padding-top:22px;
+  font-size:16px;
+  font-weight:normal;
+  color:var(--svc-blue);
+}
+/* whole card is clickable via the link */
+.svc-photo-card .svc-link::after{content:"";position:absolute;inset:0;}
+.svc-photo-card .svc-link svg{
+  width:16px;height:16px;
+  transition:transform .25s ease;
+}
+.svc-photo-card:hover .svc-link svg{transform:translateX(4px);}
+
+@media(max-width:1100px){
+  .svc-photo-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:560px){
+  .svc-photo-grid{grid-template-columns:1fr;gap:20px;}
+  .svc-photo-card .svc-body{padding:24px 24px 26px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .svc-photo-card,.svc-photo-card .svc-img img,.svc-photo-card .svc-link svg{transition:none;}
+  .svc-photo-card:hover{transform:none;}
+  .svc-photo-card:hover .svc-img img{transform:none;}
+}
+
+/* ---------- Brand Showcase ("We repair all major brands") ---------- */
+.brand-showcase{
+  /* background:#f8fafc; */
+  padding:72px 0 80px;
+  font-family:'Manrope','Segoe UI',Roboto,Arial,sans-serif;
+}
+.brand-head{text-align:center;max-width:720px;margin:0 auto 44px;}
+.brand-eyebrow{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:999px;
+  background:#e6f6fd;
+  color:#0e8bc9;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.brand-head h2{
+  margin-top:20px;
+  font-size:clamp(26px,4vw,40px);
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  text-transform:uppercase;
+  color:var(--navy-dark);
+}
+.brand-head p{
+  margin-top:14px;
+  font-size:17px;
+  line-height:1.6;
+  color:#64748b;
+}
+.brand-tiles{
+  --gap:16px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:var(--gap);
+}
+.brand-tiles li{flex:0 0 calc((100% - 6 * var(--gap)) / 7);}
+.brand-tile{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:118px;
+  padding:0 16px;
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:22px;
+  box-shadow:0 2px 6px rgba(15,23,42,0.08);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+a.brand-tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 26px rgba(15,23,42,0.12);
+}
+a.brand-tile:focus-visible{outline:3px solid var(--svc-blue,#14a3e8);outline-offset:2px;}
+.brand-tile img{
+  width:100%;
+  max-width:120px;
+  max-height:46px;
+  object-fit:contain;
+}
+@media(max-width:1100px){
+  .brand-tiles li{flex-basis:calc((100% - 3 * var(--gap)) / 4);}
+}
+@media(max-width:560px){
+  .brand-showcase{padding:48px 0 56px;}
+  .brand-tiles{--gap:12px;}
+  .brand-tiles li{flex-basis:calc((100% - var(--gap)) / 2);}
+  .brand-tile{height:96px;}
+  .brand-head p{font-size:15px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-tile{transition:none;}
+  a.brand-tile:hover{transform:none;}
+}
+
+/* ---------- Nested submenu (Services > Washing Machine / Dishwasher > Brands) ---------- */
+.nav-submenu{position:relative;}
+.nav-submenu-row{display:flex;align-items:center;border-radius:6px;}
+.nav-submenu-row > a{flex:1;}
+.nav-submenu-row:hover{background:var(--grey-bg);}
+.nav-dropdown-menu .submenu-toggle{
+  background:none;border:none;
+  color:var(--text-mid);
+  font-size:18px;line-height:1;
+  padding:6px 10px;
+  cursor:pointer;
+  border-radius:6px;
+  transition:transform .2s ease;
+}
+.nav-submenu-menu{
+  display:none;
+  position:absolute;
+  top:-8px;left:100%;
+  margin-left:-2px;
+  background:#fff;
+  box-shadow:var(--shadow-lg);
+  border-radius:8px;
+  min-width:230px;
+  padding:8px;
+  z-index:101;
+}
+@media(min-width:769px){
+  .nav-submenu:hover > .nav-submenu-menu,
+  .nav-submenu:focus-within > .nav-submenu-menu{display:block;}
+}
+@media(max-width:768px){
+  .nav-submenu-menu{
+    position:static;
+    margin:0;
+    min-width:0;
+    padding:0 0 0 14px;
+    box-shadow:none;
+  }
+  .nav-submenu.open > .nav-submenu-menu{display:block;}
+  .nav-submenu-row{border-bottom:1px solid var(--grey-line);border-radius:0;}
+  nav.main-nav .nav-submenu-row > a{border-bottom:none;}
+  .nav-dropdown-menu .submenu-toggle{padding:12px 16px;font-size:22px;}
+  .nav-submenu.open > .nav-submenu-row .submenu-toggle{transform:rotate(90deg);}
 }

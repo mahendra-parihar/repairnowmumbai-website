@@ -53,6 +53,8 @@ async function saveLeadToDatabase(data){
   return { error };
 }
 
+
+
 // ---------- Mobile Nav Toggle ----------
 function initMobileNav(){
   const hamburger = document.querySelector(".hamburger");
@@ -61,6 +63,7 @@ function initMobileNav(){
 
   hamburger.addEventListener("click", () => {
     nav.classList.toggle("open");
+    hamburger.classList.toggle("open");
   });
 
   // Dropdown toggle on mobile (tap to expand instead of hover)
@@ -77,6 +80,19 @@ function initMobileNav(){
   document.querySelectorAll(".main-nav a:not(.nav-dropdown > a)").forEach(function(link){
     link.addEventListener("click", function(){
       nav.classList.remove("open");
+    });
+  });
+}
+
+// ---------- Nested Submenu Toggle (Mobile) ----------
+function initNestedSubmenus() {
+  document.querySelectorAll('.nav-submenu .submenu-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var item = btn.closest('.nav-submenu');
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
 }
@@ -221,6 +237,7 @@ function setYear(){
 // ---------- Init all ----------
 document.addEventListener("DOMContentLoaded", function(){
   initMobileNav();
+  initNestedSubmenus();
   initFAQ();
   populateContactLinks();
   tagCtaSources();
