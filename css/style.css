@@ -992,13 +992,13 @@ footer{
   color:#64748b;
 }
 .brand-tiles{
-  --gap:16px;
+  --gap:8px;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:var(--gap);
 }
-.brand-tiles li{flex:0 0 calc((100% - 6 * var(--gap)) / 7);}
+.brand-tiles li{flex:0 0 calc((100% - 6 * var(--gap)) / 9);}
 .brand-tile{
   display:flex;
   align-items:center;
